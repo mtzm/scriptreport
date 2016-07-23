@@ -10,7 +10,7 @@ footer, content, etc.), and render these HTML using the Qt
 QTextDocument, in consequence all Qt HTML subset is supported.
 
 This product uses software developed by:
-* The Nokia Qt Project, http://qt.nokia.com/
+* The Qt Project, http://www.qt.io/developers/
 
 For source availability and license information see copying.txt.
 
