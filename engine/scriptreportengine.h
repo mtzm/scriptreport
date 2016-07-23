@@ -22,7 +22,7 @@
 
 #include "scriptreportengine_global.h"
 
-#include <QtCore/QObject>
+#include <QObject>
 #include "scriptreport.h"
 
 class QPrinter;

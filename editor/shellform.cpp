@@ -22,7 +22,7 @@
 
 #include "shellcontroller.h"
 
-#include <QtGui/QMenu>
+#include <QMenu>
 
 ShellForm::ShellForm(QWidget *parent) :
     QWidget(parent),

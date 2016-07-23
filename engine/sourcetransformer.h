@@ -20,8 +20,8 @@
 #ifndef SOURCETRANSFORMER_H
 #define SOURCETRANSFORMER_H
 
-#include <QtCore/QString>
-#include <QtCore/QTextStream>
+#include <QString>
+#include <QTextStream>
 
 #include "scriptreportengine_global.h"
 

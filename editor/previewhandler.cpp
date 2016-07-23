@@ -22,9 +22,9 @@
 #include "extendeduimainwindow.h"
 #include "mainwindow.h"
 
-#include <QtGui/QInputDialog>
-#include <QtGui/QPageSetupDialog>
-#include <QtGui/QPrintDialog>
+#include <QInputDialog>
+#include <QPageSetupDialog>
+#include <QPrintDialog>
 
 PreviewHandler::PreviewHandler(ExtendedUiMainWindow *eui, MainWindow *parent) :
     QObject(parent),

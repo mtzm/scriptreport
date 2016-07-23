@@ -20,10 +20,10 @@
 #ifndef SHELLFORM_H
 #define SHELLFORM_H
 
-#include <QtCore/QStringList>
-#include <QtCore/QEvent>
-#include <QtGui/QKeyEvent>
-#include <QtGui/QWidget>
+#include <QStringList>
+#include <QEvent>
+#include <QKeyEvent>
+#include <QWidget>
 
 namespace Ui {
     class ShellForm;

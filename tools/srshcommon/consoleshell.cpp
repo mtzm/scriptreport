@@ -25,6 +25,7 @@
 #include <QtCore/QFile>
 
 #include <stdio.h>
+#include <unistd.h>
 #if defined(Q_WS_WIN)
 #include <io.h>
 #endif

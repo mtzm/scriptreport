@@ -20,14 +20,14 @@
 #include "mainwindow.h"
 #include "extendeduimainwindow.h"
 
-#include <QtGui/QApplication>
-#include <QtGui/QFileDialog>
-#include <QtGui/QMessageBox>
-#include <QtGui/QScrollBar>
+#include <QApplication>
+#include <QFileDialog>
+#include <QMessageBox>
+#include <QScrollBar>
 
-#include <QtCore/QTextStream>
+#include <QTextStream>
 
-#include <QtScript/QScriptEngine>
+#include <QScriptEngine>
 #include <QtScriptTools/QScriptEngineDebugger>
 
 #include <ScriptReport/ScriptReport>

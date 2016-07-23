@@ -18,7 +18,7 @@
 #
 
 include(../srshcommon/srshconsolecommon.pri)
-QT += script
+QT += script printsupport
 QT -= gui
 TARGET = srsh
 DESTDIR = ../../compiled

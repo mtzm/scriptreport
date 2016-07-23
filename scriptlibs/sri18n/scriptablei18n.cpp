@@ -189,7 +189,7 @@ static void replacePercentN(QString *result, int n)
     }
 }
 
-QString ScriptableI18N::translate (QString context, QString sourceText, QString disambiguation, QCoreApplication::Encoding encoding, int n) {
+QString ScriptableI18N::translate (QString context, QString sourceText, QString disambiguation,  int n) {
     QString result;
 
     if (sourceText.isEmpty()) {
@@ -212,7 +212,6 @@ QString ScriptableI18N::translate (QString context, QString sourceText, QString 
         return QCoreApplication::translate(context.toLatin1().constData(),
                                            sourceText.toLatin1().constData(),
                                            disambiguation.toLatin1().constData(),
-                                           encoding,
                                            n);
     }
 
@@ -220,7 +219,6 @@ QString ScriptableI18N::translate (QString context, QString sourceText, QString 
         return QCoreApplication::translate(context.toLatin1().constData(),
                                            sourceText.toLatin1().constData(),
                                            disambiguation.toLatin1().constData(),
-                                           encoding,
                                            n);
     } else {
         replacePercentN(&result, n);
@@ -264,18 +262,6 @@ static QScriptValue functionQsTranslate(QScriptContext *context, QScriptEngine *
     if (argumentCount > 2) {
         comment = context->argument(2).toString();
     }
-    QCoreApplication::Encoding encoding = QCoreApplication::CodecForTr;
-    if (argumentCount > 3) {
-        QString encStr = context->argument(3).toString();
-        if (encStr == QString::fromLatin1("CodecForTr")) {
-            encoding = QCoreApplication::CodecForTr;
-        } else if (encStr == QString::fromLatin1("UnicodeUTF8")) {
-            encoding = QCoreApplication::UnicodeUTF8;
-        } else {
-            context->throwError(QString::fromLatin1("qsTranslate(): invalid encoding '%0'").arg(encStr));
-            return engine->undefinedValue();
-        }
-    }
 
     int n = -1;
     if (argumentCount > 4) {
@@ -284,7 +270,7 @@ static QScriptValue functionQsTranslate(QScriptContext *context, QScriptEngine *
 
     QScriptValue calleeData = context->callee().data();
     ScriptableI18N *i18n = qobject_cast<ScriptableI18N*>(calleeData.toQObject());
-    result = i18n->translate(contextName, text, comment, encoding, n);
+    result = i18n->translate(contextName, text, comment, n);
 #else
     result = text;
 #endif
@@ -335,7 +321,7 @@ static QScriptValue functionQsTr(QScriptContext *context, QScriptEngine *engine)
         n = context->argument(2).toInt32();
     }
 
-    result = i18n->translate(contextName, text, comment, QCoreApplication::CodecForTr, n);
+    result = i18n->translate(contextName, text, comment, n);
 #else
     result = text;
 #endif
@@ -373,7 +359,7 @@ static QScriptValue functionQsTrId(QScriptContext *context, QScriptEngine *engin
 
     QScriptValue calleeData = context->callee().data();
     ScriptableI18N *i18n = qobject_cast<ScriptableI18N*>(calleeData.toQObject());
-    result = i18n->translate(QString(), id, QString(), QCoreApplication::UnicodeUTF8, n);
+    result = i18n->translate(QString(), id, QString(), n);
     return engine->toScriptValue(result);
 }
 

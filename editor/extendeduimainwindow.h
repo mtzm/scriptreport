@@ -22,14 +22,14 @@
 
 #include "ui_mainwindow.h"
 
-#include <QtGui/QActionGroup>
-#include <QtGui/QComboBox>
-#include <QtGui/QDoubleValidator>
-#include <QtGui/QFormLayout>
-#include <QtGui/QIntValidator>
-#include <QtGui/QLabel>
-#include <QtGui/QLineEdit>
-#include <QtGui/QMainWindow>
+#include <QActionGroup>
+#include <QComboBox>
+#include <QDoubleValidator>
+#include <QFormLayout>
+#include <QIntValidator>
+#include <QLabel>
+#include <QLineEdit>
+#include <QMainWindow>
 
 #include "textdocumentsyntaxhighlighter.h"
 
@@ -304,8 +304,8 @@ public:
 private:
     void extendedRetranslateUi(QMainWindow */*MainWindow*/)
     {
-        lineLabel->setText(QApplication::translate("MainWindow", "", 0, QApplication::UnicodeUTF8));
-        columnLabel->setText(QApplication::translate("MainWindow", "", 0, QApplication::UnicodeUTF8));
+        lineLabel->setText(QApplication::translate("MainWindow", ""));
+        columnLabel->setText(QApplication::translate("MainWindow", ""));
     }
 
     void addMissingPreviewElements() {

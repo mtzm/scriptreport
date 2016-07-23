@@ -22,11 +22,11 @@
 
 #include "scriptreportengine_global.h"
 
-#include <QtCore/QObject>
-#include <QtCore/QStringList>
-#include <QtCore/QUrl>
-#include <QtCore/QMetaType>
-#include <QtCore/QVariant>
+#include <QObject>
+#include <QStringList>
+#include <QUrl>
+#include <QMetaType>
+#include <QVariant>
 
 class QPrinter;
 class QScriptEngine;

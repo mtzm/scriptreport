@@ -61,12 +61,12 @@ public:
     QString country() const;
     QString name() const;
 
-    Q_INVOKABLE short toShort(const QString &s, bool *ok = 0, int base = 0) const;
-    Q_INVOKABLE ushort toUShort(const QString &s, bool *ok = 0, int base = 0) const;
-    Q_INVOKABLE int toInt(const QString &s, bool *ok = 0, int base = 0) const;
-    Q_INVOKABLE uint toUInt(const QString &s, bool *ok = 0, int base = 0) const;
-    Q_INVOKABLE qlonglong toLongLong(const QString &s, bool *ok = 0, int base = 0) const;
-    Q_INVOKABLE qlonglong toULongLong(const QString &s, bool *ok = 0, int base = 0) const;
+    Q_INVOKABLE short toShort(const QString &s, bool *ok = 0) const;
+    Q_INVOKABLE ushort toUShort(const QString &s, bool *ok = 0) const;
+    Q_INVOKABLE int toInt(const QString &s, bool *ok = 0) const;
+    Q_INVOKABLE uint toUInt(const QString &s, bool *ok = 0) const;
+    Q_INVOKABLE qlonglong toLongLong(const QString &s, bool *ok = 0) const;
+    Q_INVOKABLE qlonglong toULongLong(const QString &s, bool *ok = 0) const;
     Q_INVOKABLE float toFloat(const QString &s, bool *ok = 0) const;
     Q_INVOKABLE double toDouble(const QString &s, bool *ok = 0) const;
 

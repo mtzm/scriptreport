@@ -20,14 +20,20 @@
 #ifndef SCRIPTSQL_H
 #define SCRIPTSQL_H
 
+#include <QtScript/QScriptEngine>
 #include <QtScript/QScriptExtensionPlugin>
+
 
 class ScriptReportSql : public QScriptExtensionPlugin
 {
+    Q_OBJECT
+    Q_PLUGIN_METADATA(IID "org.qt-project.Qt.org.qt-project.Qt.QScriptExtensionInterface")
+    Q_INTERFACES(QScriptExtensionInterface)
+
 public:
-    ScriptReportSql();
-    QStringList keys() const;
-    void initialize(const QString &key, QScriptEngine *engine);
+    ScriptReportSql(QObject *parent = 0);
+    QStringList keys() const Q_DECL_OVERRIDE;
+    void initialize(const QString &key, QScriptEngine *engine) Q_DECL_OVERRIDE;
 };
 
 #endif // SCRIPTSQL_H

@@ -19,7 +19,7 @@
 
 include(../scriptreport.pri)
 include(scriptable/scriptable.pri)
-QT += script
+QT += script widgets printsupport
 TARGET = scriptreportengine
 TEMPLATE = lib
 DESTDIR = ../compiled

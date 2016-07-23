@@ -24,7 +24,7 @@
  * Based in the Qt Code Editor Example
  */
 
-#include <QPlainTextEdit>
+#include <QtWidgets/QPlainTextEdit>
 #include <QObject>
 
 class QPaintEvent;

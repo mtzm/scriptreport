@@ -23,8 +23,8 @@
  * Based in the Qt Code Editor Example
  */
 
-#include <QtGui/QPainter>
-#include <QtGui/QTextBlock>
+#include <QPainter>
+#include <QTextBlock>
 
 /*
  * Class PlainTextEditLineNumberArea

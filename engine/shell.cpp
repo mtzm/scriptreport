@@ -19,7 +19,7 @@
 
 #include "shell.h"
 
-#include <QtScript/QScriptValueIterator>
+#include <QScriptValueIterator>
 
 #include "scriptable/scriptableshellengine.h"
 

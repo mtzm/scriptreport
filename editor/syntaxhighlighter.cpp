@@ -44,7 +44,7 @@ void SyntaxHighlighter::init() {
 }
 
 static inline char at(QString t, int pos) {
-    return t.at(pos).toAscii();
+    return t.at(pos).toLatin1();
 }
 
 void SyntaxHighlighter::highlightBlock(const QString &text)

@@ -20,9 +20,9 @@
 #ifndef SHELL_H
 #define SHELL_H
 
-#include <QtCore/QObject>
-#include <QtCore/QStringList>
-#include <QtScript/QScriptEngine>
+#include <QObject>
+#include <QStringList>
+#include <QScriptEngine>
 
 #include "scriptreportengine_global.h"
 

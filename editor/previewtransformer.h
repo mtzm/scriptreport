@@ -20,8 +20,8 @@
 #ifndef PREVIEWTRANSFORMER_H
 #define PREVIEWTRANSFORMER_H
 
-#include <QtCore/QString>
-#include <QtCore/QTextStream>
+#include <QString>
+#include <QTextStream>
 
 class PreviewTransformer
 {

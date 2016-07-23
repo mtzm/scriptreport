@@ -18,8 +18,7 @@
 #
 
 include(../scriptreport.pri)
-QT += script \
-    scripttools
+QT += widgets printsupport script  scripttools
 TARGET = scriptreporteditor
 TEMPLATE = app
 DESTDIR = ../compiled

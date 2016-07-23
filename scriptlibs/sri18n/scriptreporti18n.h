@@ -24,6 +24,9 @@
 
 class ScriptReportI18N : public QScriptExtensionPlugin
 {
+    Q_OBJECT
+    Q_PLUGIN_METADATA(IID "org.qt-project.Qt.org.qt-project.Qt.QScriptExtensionInterface")
+    Q_INTERFACES(QScriptExtensionInterface)
 public:
     ScriptReportI18N();
     QStringList keys() const;

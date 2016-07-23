@@ -56,7 +56,7 @@ public:
     void installTranslatorFunctions(const QScriptValue &object, QScriptEngine &engine);
     Q_INVOKABLE void installTranslatorFunctions(const QScriptValue &object = QScriptValue());
 
-    QString translate (QString context, QString sourceText, QString disambiguation = QString(), QCoreApplication::Encoding encoding = QCoreApplication::CodecForTr, int n = -1);
+    QString translate (QString context, QString sourceText, QString disambiguation = QString(), int n = -1);
 
     QString getCurrentContext(QScriptContext *context);
 

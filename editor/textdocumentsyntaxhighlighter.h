@@ -21,9 +21,9 @@
 #define TEXTDOCUMENTSYNTAXHIGHLIGHTER_H
 
 #include "syntaxhighlighter.h"
-#include <QtCore/QList>
-#include <QtCore/QStringList>
-#include <QtCore/QSet>
+#include <QList>
+#include <QStringList>
+#include <QSet>
 
 class TextDocumentSyntaxHighlighter : public SyntaxHighlighter
 {

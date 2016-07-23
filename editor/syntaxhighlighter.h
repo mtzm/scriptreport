@@ -20,8 +20,9 @@
 #ifndef SYNTAXHIGHLIGHTER_H
 #define SYNTAXHIGHLIGHTER_H
 
-#include <QtCore/QHash>
-#include <QtGui/QSyntaxHighlighter>
+#include <QHash>
+#include <QSyntaxHighlighter>
+#include <QTextEdit>
 
 class SyntaxHighlighter : public QSyntaxHighlighter
 {

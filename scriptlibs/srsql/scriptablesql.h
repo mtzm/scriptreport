@@ -54,7 +54,7 @@ public:
     Q_INVOKABLE ScriptableDatabase* database(const QString &connectionName = QLatin1String(defaultConnection), bool open = true);
 
 private:
-    QT_STATIC_CONST char *defaultConnection;
+    static const char *defaultConnection;
     QMap<QString, ScriptableDatabase*> m_connections;
     bool m_autoThrow;
 };

@@ -71,4 +71,3 @@ void ScriptReportI18N::initialize(const QString &key, QScriptEngine *engine) {
     }
 }
 
-Q_EXPORT_PLUGIN2(scriptreporti18n, ScriptReportI18N)

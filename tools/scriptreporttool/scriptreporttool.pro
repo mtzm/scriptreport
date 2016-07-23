@@ -18,7 +18,7 @@
 #
 
 include(../../scriptreport.pri)
-QT += script
+QT += script widgets printsupport
 CONFIG += console
 CONFIG -= app_bundle
 TARGET = scriptreporttool

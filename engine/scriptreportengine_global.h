@@ -20,7 +20,7 @@
 #ifndef SCRIPTREPORTENGINE_GLOBAL_H
 #define SCRIPTREPORTENGINE_GLOBAL_H
 
-#include <QtCore/qglobal.h>
+#include <qglobal.h>
 
 #if !defined(SCRIPTREPORTENGINE_NOLIBRARY)
 

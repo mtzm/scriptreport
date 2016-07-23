@@ -22,8 +22,8 @@
 
 #include "scriptreportengine_global.h"
 
-#include <QtCore/QObject>
-#include <QtCore/QTextStream>
+#include <QObject>
+#include <QTextStream>
 
 class TextStreamObjectPrivate;
 

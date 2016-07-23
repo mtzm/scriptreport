@@ -67,14 +67,13 @@ static void recordFromScriptValue(const QScriptValue &object, ScriptableRecord* 
  * Class
  */
 
-ScriptReportSql::ScriptReportSql()
+ScriptReportSql::ScriptReportSql(QObject *parent):
+    QScriptExtensionPlugin(parent)
 {
 }
 
 QStringList ScriptReportSql::keys() const {
-    QStringList result;
-    result << QString::fromLatin1("srsql");
-    return result;
+    return QStringList() << QString::fromLatin1("srsql");;
 }
 
 void ScriptReportSql::initialize(const QString &key, QScriptEngine *engine) {
@@ -92,5 +91,3 @@ void ScriptReportSql::initialize(const QString &key, QScriptEngine *engine) {
 
     }
 }
-
-Q_EXPORT_PLUGIN2(scriptreportsql, ScriptReportSql)

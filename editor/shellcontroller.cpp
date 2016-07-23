@@ -19,8 +19,8 @@
 
 #include "shellcontroller.h"
 
-#include <QtGui/QWidget>
-#include <QtGui/QInputDialog>
+#include <QWidget>
+#include <QInputDialog>
 
 ShellController::ShellController(QWidget *parent) :
     Shell(parent),

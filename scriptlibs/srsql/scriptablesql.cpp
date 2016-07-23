@@ -25,7 +25,7 @@
 
 #include "scriptabledatabase.h"
 
-QT_STATIC_CONST_IMPL char *ScriptableSql::defaultConnection = "qt_sql_default_connection";
+const char*ScriptableSql::defaultConnection = "qt_sql_default_connection";
 
 ScriptableSql::ScriptableSql(QObject *parent) :
     QObject(parent), QScriptable(), m_autoThrow(true)

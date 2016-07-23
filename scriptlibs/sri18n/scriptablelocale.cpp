@@ -79,28 +79,28 @@ QString ScriptableLocale::name() const {
     return m_locale.name();
 }
 
-short ScriptableLocale::toShort(const QString &s, bool *ok, int base) const {
-    return m_locale.toShort(s, ok, base);
+short ScriptableLocale::toShort(const QString &s, bool *ok) const {
+    return m_locale.toShort(s, ok);
 }
 
-ushort ScriptableLocale::toUShort(const QString &s, bool *ok, int base) const {
-    return m_locale.toUShort(s, ok, base);
+ushort ScriptableLocale::toUShort(const QString &s, bool *ok) const {
+    return m_locale.toUShort(s, ok);
 }
 
-int ScriptableLocale::toInt(const QString &s, bool *ok, int base) const {
-    return m_locale.toInt(s, ok, base);
+int ScriptableLocale::toInt(const QString &s, bool *ok) const {
+    return m_locale.toInt(s, ok);
 }
 
-uint ScriptableLocale::toUInt(const QString &s, bool *ok, int base) const {
-    return m_locale.toUInt(s, ok, base);
+uint ScriptableLocale::toUInt(const QString &s, bool *ok) const {
+    return m_locale.toUInt(s, ok);
 }
 
-qlonglong ScriptableLocale::toLongLong(const QString &s, bool *ok, int base) const {
-    return m_locale.toLongLong(s, ok, base);
+qlonglong ScriptableLocale::toLongLong(const QString &s, bool *ok) const {
+    return m_locale.toLongLong(s, ok);
 }
 
-qlonglong ScriptableLocale::toULongLong(const QString &s, bool *ok, int base) const {
-    return m_locale.toULongLong(s, ok, base);
+qlonglong ScriptableLocale::toULongLong(const QString &s, bool *ok) const {
+    return m_locale.toULongLong(s, ok);
 }
 
 float ScriptableLocale::toFloat(const QString &s, bool *ok) const {

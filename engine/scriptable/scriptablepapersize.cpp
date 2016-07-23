@@ -19,10 +19,10 @@
 
 #include "scriptablepapersize.h"
 
-#include <QtCore/QMetaEnum>
-#include <QtGui/QPrinter>
-#include <QtScript/QScriptContext>
-#include <QtScript/QScriptValue>
+#include <QMetaEnum>
+#include <QPrinter>
+#include <QScriptContext>
+#include <QScriptValue>
 
 /*
  * Statics
@@ -374,7 +374,7 @@ void ScriptablePaperSize::applyConfigurationTo(QPrinter &printer) {
 
 void ScriptablePaperSize::updateHeightAndWidth() {
     QPrinter printer;
-    printer.setPageSize(toQPrinter(m_size));
+    printer.setPaperSize(toQPrinter(m_size));
     QSizeF sizef = printer.paperSize(toQPrinter(m_unit));
     m_height = sizef.height();
     m_width  = sizef.width();

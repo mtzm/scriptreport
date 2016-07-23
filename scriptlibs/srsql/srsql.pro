@@ -20,7 +20,7 @@
 include(../../scriptreport.pri)
 QT += sql \
     script
-QT -= gui
+QT -= widgets
 TARGET = srsql
 TEMPLATE = lib
 DESTDIR = ../../compiled/script

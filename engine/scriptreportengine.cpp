@@ -19,11 +19,11 @@
 
 #include "scriptreportengine.h"
 
-#include <QtCore/QTextStream>
-#include <QtGui/QTextDocument>
-#include <QtGui/QPainter>
-#include <QtGui/QPrinter>
-#include <QtScript/QScriptEngine>
+#include <QTextStream>
+#include <QTextDocument>
+#include <QPainter>
+#include <QtPrintSupport/QPrinter>
+#include <QScriptEngine>
 
 #include "sourcetransformer.h"
 #include "textstreamobject.h"

@@ -18,7 +18,7 @@
 #
 
 include(../srshcommon/srshconsolecommon.pri)
-QT       += script
+QT       += script widgets
 TARGET = srshqg
 DESTDIR = ../../compiled
 CONFIG   += console

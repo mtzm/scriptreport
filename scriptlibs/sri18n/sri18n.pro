@@ -19,7 +19,7 @@
 
 include(../../scriptreport.pri)
 QT += script
-QT -= gui
+QT -= widgets
 TARGET = sri18n
 TEMPLATE = lib
 DESTDIR = ../../compiled/script

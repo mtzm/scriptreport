@@ -17,10 +17,10 @@
  * along with Script Report.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include <QtCore/QTranslator>
-#include <QtCore/QLibraryInfo>
-#include <QtCore/QLocale>
-#include <QtGui/QApplication>
+#include <QTranslator>
+#include <QLibraryInfo>
+#include <QLocale>
+#include <QApplication>
 #include "mainwindow.h"
 
 int main(int argc, char *argv[])
