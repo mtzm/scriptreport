@@ -1,5 +1,5 @@
 Script Report
-Visit: http://code.google.com/p/scriptreport/
+Visit: https://github.com/mtzm/scriptreport
 
 Script Report is a script report engine for create print report using
 html and javascript.

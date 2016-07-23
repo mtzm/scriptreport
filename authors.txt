@@ -1,5 +1,6 @@
 Authors:
 * Juan Luis Paz, juanluispaz@gmail.com
+* Moritz Moroder, moritz@trendyweb.it
 
 Translations:
 
