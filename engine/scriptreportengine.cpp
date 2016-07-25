@@ -114,20 +114,6 @@ void ScriptReportEngine::print(ScriptReport *scriptReport, QPrinter *printer) {
     bool footerHasPage = footerTemplate.contains(pageName);
     bool footerHasPageCount = footerTemplate.contains(pageCountName);
 
-    if (headerFirstTemplate.isNull()) {
-        headerFirstTemplate = headerTemplate;
-    }
-    if (headerLastTemplate.isNull()) {
-        headerLastTemplate = headerTemplate;
-    }
-
-    if (footerFirstTemplate.isNull()) {
-        footerFirstTemplate = footerTemplate;
-    }
-    if (footerLastTemplate.isNull()) {
-        footerLastTemplate = footerTemplate;
-    }
-
     QTextDocument documentHeader;
     QTextDocument documentFooter;
     QTextDocument mainDocument;
@@ -140,15 +126,29 @@ void ScriptReportEngine::print(ScriptReport *scriptReport, QPrinter *printer) {
          mainDocument.addResource(resourcesIterator.value().first, resourcesIterator.key(), resourcesIterator.value().second);
      }
 
+
+
     // Setting up the header and calculating the header size
     documentHeader.setPageSize(printerRect.size());
-    documentHeader.setHtml(headerTemplate);
-    QSizeF headerSize = documentHeader.size();
+    QSizeF headerSize = QSize(0,0);
+    foreach ( QString t, QStringList()<<headerFirstTemplate<<headerLastTemplate<<headerTemplate )
+    {
+        documentHeader.setHtml(t);
+        if ( documentHeader.size().height() > headerSize.height() ) {
+            headerSize = documentHeader.size();
+        }
+    }
 
     // Setting up the footer and calculating the footer size
     documentFooter.setPageSize(printerRect.size());
-    documentFooter.setHtml(footerTemplate);
-    QSizeF footerSize = documentFooter.size();
+    QSizeF footerSize = QSize(0,0);
+    foreach ( QString t, QStringList()<<footerFirstTemplate<<footerLastTemplate<<footerTemplate )
+    {
+        documentFooter.setHtml(t);
+        if ( documentFooter.size().height() > footerSize.height() ) {
+            footerSize = documentFooter.size();
+        }
+    }
 
     // Calculating the main document size for one page
     QSizeF centerSize(printerRect.width(),
@@ -224,35 +224,36 @@ void ScriptReportEngine::print(ScriptReport *scriptReport, QPrinter *printer) {
 
         forever {
             QString page = QString::number(currentPage);
-            if (currentPage == 1) {
-                QString header = QString(headerFirstTemplate).replace(pageName, page);
-                documentHeader.setHtml(header);
-            } else if (currentPage >= pageCount) {
-                QString header = QString(headerLastTemplate).replace(pageName, page);
-                documentHeader.setHtml(header);
-            } else if (headerHasPage) {
-                QString header = QString(headerTemplate).replace(pageName, page);
-                documentHeader.setHtml(header);
-            } else if (currentPage == 2) {
-                documentHeader.setHtml(headerTemplate);
-            }
 
             if (contentHasPage) {
                 QString content = QString(contentTemplate).replace(pageName, page);
                 mainDocument.setHtml(content);
             }
 
-            if (currentPage == 1) {
-                QString footer = QString(footerFirstTemplate).replace(pageName, page);
-                documentFooter.setHtml(footer);
-            } else if (currentPage >= pageCount) {
-                QString footer = QString(footerLastTemplate).replace(pageName, page);
-                documentFooter.setHtml(footer);
-            } else if (footerHasPage) {
+            if (currentPage == 1 && footerFirstTemplate.isNull() ==false ) {
+                if( footerFirstTemplate.isNull() ==false ) {
+                    QString html = QString(footerFirstTemplate).replace(pageName, page);
+                    documentFooter.setHtml(html);
+                }
+                if( headerFirstTemplate.isNull() ==false ) {
+                    QString html = QString(headerFirstTemplate).replace(pageName, page);
+                    documentHeader.setHtml(html);
+                }
+            }else if (currentPage >= pageCount ) {
+
+                if( footerLastTemplate.isNull() ==false ) {
+                    QString html = QString(footerLastTemplate).replace(pageName, page);
+                    documentFooter.setHtml(html);
+                }
+                if( headerLastTemplate.isNull() ==false ) {
+                    QString html = QString(headerLastTemplate).replace(pageName, page);
+                    documentHeader.setHtml(html);
+                }
+            } else {
                 QString footer = QString(footerTemplate).replace(pageName, page);
                 documentFooter.setHtml(footer);
-            } else if (currentPage == 2) {
-                documentFooter.setHtml(footerTemplate);
+                QString header = QString(headerTemplate).replace(pageName, page);
+                documentHeader.setHtml(header);
             }
 
 
