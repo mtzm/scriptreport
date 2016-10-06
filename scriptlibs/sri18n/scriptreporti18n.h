@@ -25,8 +25,12 @@
 class ScriptReportI18N : public QScriptExtensionPlugin
 {
     Q_OBJECT
+
+#if QT_VERSION >= 0x050000
     Q_PLUGIN_METADATA(IID "org.qt-project.Qt.org.qt-project.Qt.QScriptExtensionInterface")
     Q_INTERFACES(QScriptExtensionInterface)
+#endif
+
 public:
     ScriptReportI18N();
     QStringList keys() const;

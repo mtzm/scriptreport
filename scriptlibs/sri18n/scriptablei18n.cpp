@@ -189,6 +189,22 @@ static void replacePercentN(QString *result, int n)
     }
 }
 
+QString ScriptableI18N::qcoreapp_translate(QString context, QString sourceText, QString disambiguation, int n )
+{
+#if QT_VERSION >= 0x050000
+    return QCoreApplication::translate(context.toLatin1().constData(),
+                                       sourceText.toLatin1().constData(),
+                                       disambiguation.toLatin1().constData(),
+                                       n);
+#else
+    return QCoreApplication::translate(context.toLatin1().constData(),
+                                       sourceText.toLatin1().constData(),
+                                       disambiguation.toLatin1().constData(),
+                                       QCoreApplication::UnicodeUTF8,
+                                       n);
+#endif
+}
+
 QString ScriptableI18N::translate (QString context, QString sourceText, QString disambiguation,  int n) {
     QString result;
 
@@ -209,17 +225,11 @@ QString ScriptableI18N::translate (QString context, QString sourceText, QString 
                 break;
         }
     } else {
-        return QCoreApplication::translate(context.toLatin1().constData(),
-                                           sourceText.toLatin1().constData(),
-                                           disambiguation.toLatin1().constData(),
-                                           n);
+        return qcoreapp_translate(context,sourceText,disambiguation,n);
     }
 
     if (result.isEmpty()) {
-        return QCoreApplication::translate(context.toLatin1().constData(),
-                                           sourceText.toLatin1().constData(),
-                                           disambiguation.toLatin1().constData(),
-                                           n);
+        return qcoreapp_translate(context,sourceText,disambiguation,n);
     } else {
         replacePercentN(&result, n);
         return result;

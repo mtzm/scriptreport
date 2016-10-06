@@ -24,8 +24,13 @@
  * Based in the Qt Code Editor Example
  */
 
-#include <QtWidgets/QPlainTextEdit>
 #include <QObject>
+
+#if QT_VERSION >= 0x050000
+#include <QtWidgets/QPlainTextEdit>
+#else
+#include <QPlainTextEdit>
+#endif
 
 class QPaintEvent;
 class QResizeEvent;

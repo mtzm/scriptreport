@@ -23,8 +23,13 @@
 #include <QFile>
 #include <QTextDocument>
 #include <QPainter>
-#include <QtPrintSupport/QPrinter>
 #include <QScriptEngine>
+
+#if QT_VERSION >= 0x050000
+#include <QtPrintSupport/QPrinter>
+#else
+#include <QPrinter>
+#endif
 
 #include "sourcetransformer.h"
 #include "textstreamobject.h"

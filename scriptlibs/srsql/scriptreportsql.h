@@ -27,13 +27,16 @@
 class ScriptReportSql : public QScriptExtensionPlugin
 {
     Q_OBJECT
+
+#if QT_VERSION >= 0x050000
     Q_PLUGIN_METADATA(IID "org.qt-project.Qt.org.qt-project.Qt.QScriptExtensionInterface")
     Q_INTERFACES(QScriptExtensionInterface)
+#endif
 
 public:
     ScriptReportSql(QObject *parent = 0);
-    QStringList keys() const Q_DECL_OVERRIDE;
-    void initialize(const QString &key, QScriptEngine *engine) Q_DECL_OVERRIDE;
+    QStringList keys() const;
+    void initialize(const QString &key, QScriptEngine *engine);
 };
 
 #endif // SCRIPTSQL_H
