@@ -20,7 +20,7 @@
 #include "scriptablepapermargins.h"
 
 #include <QtCore/QMetaEnum>
-#include <QtGui/QPrinter>
+#include <QPrinter>
 #include <QtScript/QScriptContext>
 #include <QtScript/QScriptValue>
 

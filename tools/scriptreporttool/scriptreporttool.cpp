@@ -26,9 +26,9 @@
 #include <QtCore/QTimer>
 #include <QtCore/QTextStream>
 
-#include <QtGui/QPrinter>
-#include <QtGui/QPrintDialog>
-#include <QtGui/QPrintPreviewDialog>
+#include <QPrinter>
+#include <QPrintDialog>
+#include <QPrintPreviewDialog>
 
 #include <QtScript/QScriptEngine>
 

@@ -20,7 +20,7 @@
 #include "scriptablepaper.h"
 
 #include <QtCore/QMetaEnum>
-#include <QtGui/QPrinter>
+#include <QPrinter>
 #include <QtScript/QScriptEngine>
 
 /*

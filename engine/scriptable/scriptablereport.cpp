@@ -20,8 +20,8 @@
 #include "scriptablereport.h"
 
 #include <QtCore/QTextStream>
-#include <QtGui/QPrinter>
-#include <QtGui/QWidget>
+#include <QPrinter>
+#include <QWidget>
 #include <QtGui/QPainter>
 #include <QtGui/QPicture>
 #include <QtGui/QTextDocument>

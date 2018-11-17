@@ -17,7 +17,7 @@
  * along with Script Report.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include <QtGui/QApplication>
+#include <QApplication>
 
 #include "scriptreporttool.h"
 
